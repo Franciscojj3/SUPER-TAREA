@@ -70,6 +70,18 @@
 	});
 	HERE_hybridDay.addTo(mapa) 
 	
+      // WMS	    
+	 var wmsprovincia = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+    	 layers: 'limiteprovincial_5k'
+     	 }); 
+	 wmsprovincia.addTo(mapa);  
+	    
+	 var wmsdistrito = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_50/wms?', {
+    	 layers: 'limitedistrital_50k'
+     	 }); 
+	 wmsdistrito.addTo(mapa);
+	    
+	    
       // Defino la variable canton 		
 	function infocanton(feature, layer) {
 	var popupContent = "Nombre de Cantón: ";
@@ -138,7 +150,9 @@
 	  
    var overlays = {
 	"Nombre de Cantón: ": registrocanton,
-	"Población: ": pob
+	"Población: ": pob,
+	"Provincias": wmsprovincia,
+	"Distritos": wmsdistrito
       };
   
    
