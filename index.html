@@ -80,6 +80,11 @@
     	 layers: 'limitedistrital_50k'
      	 }); 
 	 wmsdistrito.addTo(mapa);
+	  
+	 var wmsnom_calles = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_NG/wms?', {
+    	 layers: 'ng_190505_25k'
+     	 }); 
+	 wmsnom_calles.addTo(mapa);
 	    
 	    
       // Defino la variable canton 		
@@ -152,7 +157,8 @@
 	"Nombre de Cantón: ": registrocanton,
 	"Población: ": pob,
 	"Provincias": wmsprovincia,
-	"Distritos": wmsdistrito
+	"Distritos": wmsdistrito,
+	"Nombres de calles": wmsnom_calles
       };
   
    
